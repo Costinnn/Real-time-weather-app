@@ -1,0 +1,42 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #A8E0FF;
+  color: white;
+  height: 100vh;
+
+  .search-input {
+    margin-top: 50px;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      input {
+        border: 1px solid white;
+        background-color: transparent;
+        color: white;
+        font-size: 1.5rem;
+        padding: 5px 15px 5px 15px;
+        border-radius: 15px;
+        box-shadow: 0 0 10px 1px white;
+      }
+
+      input:focus {
+        outline: none;
+      }
+
+      button {
+        border: none;
+        background-color: white;
+        color: lightblue;
+        font-weight: 600;
+        padding: 5px 20px 5px 20px;
+        border-radius: 15px;
+      }
+    }
+  }
+}
