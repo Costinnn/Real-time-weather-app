@@ -1,0 +1,41 @@
+.dailyTemp {
+  margin-top: 20px;
+  width: 95vw;
+  background-color: #839fc3;
+  border-radius: 20px;
+  padding: 10px;
+
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    > p {
+      font-size: 1.2rem;
+    }
+
+    .item-info {
+        width: 65%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+
+      img {
+        width: 20px;
+      }
+
+      > div:first-child {
+        display: flex;
+        flex-direction: column;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 30%;
+      }
+    }
+  }
+}

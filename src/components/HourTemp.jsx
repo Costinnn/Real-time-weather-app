@@ -11,7 +11,7 @@ const HourTemp = ({ hoursData }) => {
             <div className="item" key={index}>
               <p>{item.time.slice(-5)}</p>
               <img src={icon} alt="" />
-              <p>{item.temp_c} &#8451;</p>
+              <p>{item.temp_c}&#176;</p>
             </div>
           );
         })}

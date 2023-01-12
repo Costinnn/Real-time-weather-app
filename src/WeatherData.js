@@ -1,6 +1,6 @@
 export const WEATHER_DATA = {
   location: {
-    name: "Iasi",
+    name: "Iasi-TEST",
     region: "Iasi",
     country: "Romania",
     lat: 47.17,

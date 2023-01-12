@@ -4,10 +4,21 @@ import GetWeather from "./utils/GetWeather";
 
 import GeneralInfo from "./components/GeneralInfo";
 import HourTemp from "./components/HourTemp";
+import DailyTemp from "./components/DailyTemp";
 
 import { WEATHER_DATA } from "./WeatherData";
 
 import "./App.scss";
+
+const days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -20,6 +31,12 @@ function App() {
     console.log(data.location.name);
   };
 
+  const getDayName = (date) => {
+    const d = new Date(date);
+    const dayName = days[d.getDay()];
+    return dayName
+  };
+
   const handleSearch = (e) => {
     e.preventDefault();
     importData(searchInput);
@@ -28,6 +45,7 @@ function App() {
 
   useEffect(() => {
     importData("Bucuresti");
+    // setWeatherData(WEATHER_DATA);
   }, []);
 
   return (
@@ -57,6 +75,9 @@ function App() {
       {weatherData && (
         <HourTemp hoursData={weatherData.forecast.forecastday[0].hour} />
       )}
+      {weatherData && <DailyTemp dailyData = {weatherData.forecast.forecastday} getDayName={getDayName}/>}
+
+      <p></p>
     </div>
   );
 }
