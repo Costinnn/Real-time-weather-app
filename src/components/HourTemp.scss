@@ -4,6 +4,7 @@
   overflow-x: scroll;
   padding-left: 8px;
   flex-shrink: 0;
+  margin-top: 20px;
 
   .carousel {
     display: flex;
@@ -13,7 +14,7 @@
   .item {
     
     text-align: center;
-    background-color: #839fc3;
+    background-color: #6e4e7e;
     min-width: 90px;
     margin-right: 5px;
     margin-bottom: 5px;

@@ -1,7 +1,5 @@
 import "./HourTemp.scss";
 
-import icon from "../assets/sun.png";
-
 const HourTemp = ({ hoursData }) => {
   return (
     <div className="frame">
@@ -10,7 +8,12 @@ const HourTemp = ({ hoursData }) => {
           return (
             <div className="item" key={index}>
               <p>{item.time.slice(-5)}</p>
-              <img src={icon} alt="" />
+              <img
+                src={require(`../assets/hourlyIcons/${item.condition.icon.slice(
+                  -7
+                )}`)}
+                alt="icon"
+              />
               <p>{item.temp_c}&#176;</p>
             </div>
           );

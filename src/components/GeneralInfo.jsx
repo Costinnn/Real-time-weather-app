@@ -1,9 +1,8 @@
 import "./GeneralInfo.scss";
 
 import pin from "../assets/pin.png";
-import sun from "../assets/sun.png";
 
-const GeneralInfo = ({cityName, cityData}) => {
+const GeneralInfo = ({ cityName, cityData, iconNum }) => {
   return (
     <div className="container general-info">
       <div className="city-temp">
@@ -15,7 +14,11 @@ const GeneralInfo = ({cityName, cityData}) => {
         <p>{cityData.condition.text}</p>
       </div>
 
-      <img className="temp-icon" src={sun} alt="sun" />
+      <img
+        className="temp-icon"
+        src={require(`../assets/hourlyIcons/${iconNum}`)}
+        alt="sun"
+      />
     </div>
   );
 };

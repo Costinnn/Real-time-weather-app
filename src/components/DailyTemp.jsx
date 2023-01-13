@@ -7,10 +7,10 @@ import rainIcon from "../assets/rain.png";
 const DailyTemp = ({ dailyData, getDayName }) => {
   return (
     <div className="dailyTemp">
-      {dailyData.map((item) => {
+      {dailyData.map((item, index) => {
         return (
-          <div className="item">
-            <p>{getDayName(item.date)}</p>
+          <div className="item" key={index}>
+            <p>{index === 0 ? "Today" : getDayName(item.date)}</p>
             <div className="item-info">
               <div>
                 <img src={rainIcon} alt="icon" />
