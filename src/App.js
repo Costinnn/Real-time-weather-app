@@ -38,14 +38,16 @@ function App() {
   };
 
   const handleSearch = (e) => {
+    // 1/2 realtime data
     e.preventDefault();
     importData(searchInput);
     setSearchInput("");
   };
 
   useEffect(() => {
+    // 2/2 realtime data
     importData("Bucuresti");
-    // setWeatherData(WEATHER_DATA);
+    //  setWeatherData(WEATHER_DATA);
   }, []);
 
   return (

@@ -3,7 +3,7 @@ const GetWeather = async (location) => {
 
   try {
     const response = await fetch(
-      `http://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=5&aqi=no&alerts=no`
+      `https://api.weatherapi.com/v1/forecast.json?key=${API_KEY}&q=${location}&days=5&aqi=no&alerts=no`
     );
     console.log(response);
     const weatherData = await response.json();
