@@ -34,7 +34,7 @@ function App() {
   const getDayName = (date) => {
     const d = new Date(date);
     const dayName = days[d.getDay()];
-    return dayName
+    return dayName;
   };
 
   const handleSearch = (e) => {
@@ -47,7 +47,9 @@ function App() {
   useEffect(() => {
     // 2/2 realtime data
     importData("Bucuresti");
-    //  setWeatherData(WEATHER_DATA);
+
+    // // ONLY FOR LOCAL TEST
+    // setWeatherData(WEATHER_DATA);
   }, []);
 
   return (
@@ -77,7 +79,12 @@ function App() {
       {weatherData && (
         <HourTemp hoursData={weatherData.forecast.forecastday[0].hour} />
       )}
-      {weatherData && <DailyTemp dailyData = {weatherData.forecast.forecastday} getDayName={getDayName}/>}
+      {weatherData && (
+        <DailyTemp
+          dailyData={weatherData.forecast.forecastday}
+          getDayName={getDayName}
+        />
+      )}
 
       <p></p>
     </div>

@@ -3,6 +3,7 @@
   overflow: hidden;
   overflow-x: scroll;
   padding-left: 8px;
+  flex-shrink: 0;
 
   .carousel {
     display: flex;
