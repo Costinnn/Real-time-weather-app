@@ -28,6 +28,11 @@
         box-shadow: 0 0 10px 1px white;
       }
 
+      input::placeholder{
+        color: white;
+        opacity: 0.8;
+      }
+
       input:focus {
         outline: none;
       }
@@ -39,6 +44,10 @@
         font-weight: 600;
         padding: 5px 20px 5px 20px;
         border-radius: 15px;
+      }
+
+      >p{
+        color: rgb(221, 0, 0);
       }
     }
   }
