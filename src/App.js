@@ -48,10 +48,10 @@ function App() {
   // Return weather info for hours after localtime
   const getHours = (todayArr, tomorrowArr, hour) => {
     let count = 0;
-    const currentHour = hour.slice(-5);
+    const currentHour = Number(hour.slice(-5, -3));
 
     const todayHoursArr = todayArr.filter((item) => {
-      if (item.time.slice(-5) >= currentHour) {
+      if (Number(item.time.slice(-5, -3)) > currentHour) {
         count++;
         return item;
       }
@@ -59,7 +59,7 @@ function App() {
     });
 
     const tmrwHoursArr = tomorrowArr.filter((item) => {
-      while (count < 24 && item.time.slice(-5) < currentHour) {
+      while (count < 24 && Number(item.time.slice(-5,-3)) <= currentHour) {
         count++;
         return item;
       }
