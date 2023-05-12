@@ -1,5 +1,5 @@
 const GetWeather = async (location) => {
-  const API_KEY = "c1acd22bc69a4aa49b085806231101";
+  const API_KEY = process.env.REACT_APP_API_KEY;
 
   try {
     const response = await fetch(
