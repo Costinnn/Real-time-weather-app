@@ -1,4 +1,7 @@
 # Weather app using public API
+Optimized only for phone layout
+
+<img src="https://github.com/Costinnn/Real-time-weather-app/assets/103998434/2e1eb170-4ff4-4c42-b252-0258ad32e2a2" width="50%">
 
 ## Introduction - project's aim
 
