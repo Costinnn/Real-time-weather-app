@@ -9,10 +9,23 @@
   background-color: #b9a1c5;
   color: white;
   min-height: 100vh;
+  padding: 20px;
+  width: calc(100vw - (100vw - 100%));
+
+  .section-narrow {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 0 auto;
+  }
 
   .search-input {
     margin-top: 40px;
-
+    @media screen and (min-width: 800px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -28,7 +41,7 @@
         box-shadow: 0 0 10px 1px white;
       }
 
-      input::placeholder{
+      input::placeholder {
         color: white;
         opacity: 0.8;
       }
@@ -42,13 +55,34 @@
         background-color: #6e4e7e;
         color: white;
         font-weight: 600;
-        padding: 5px 20px 5px 20px;
+        padding: 10px 20px 10px 20px;
         border-radius: 15px;
       }
 
-      >p{
+      > p {
         color: rgb(221, 0, 0);
       }
+    }
+  }
+  .box1 {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 0 auto;
+
+    @media screen and (min-width: 800px) {
+      display: flex;
+      justify-content: space-around;
+      gap: 10px;
+    }
+  }
+  .box2 {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto 0 auto;
+
+    @media screen and (min-width: 650px) {
+      display: flex;
+      gap: 10px;
     }
   }
 }

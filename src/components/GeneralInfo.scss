@@ -1,6 +1,11 @@
 .general-info {
-  margin-top: 20px;
+  margin-top: 30px !important;
   justify-content: space-around;
+
+  @media screen and (min-width: 800px) {
+    justify-content: center;
+    gap: 20px;
+  }
   .city-temp {
     h2 {
       padding-left: 20px;

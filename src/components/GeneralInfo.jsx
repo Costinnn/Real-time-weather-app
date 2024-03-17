@@ -4,7 +4,7 @@ import pin from "../assets/pin.png";
 
 const GeneralInfo = ({ cityName, cityData, iconNum }) => {
   return (
-    <div className="container general-info">
+    <div className="container general-info section-narrow">
       <div className="city-temp">
         <h2>{cityData.temp_c} &#8451;</h2>
         <div className="city-name">

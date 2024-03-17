@@ -7,7 +7,7 @@ import HourTemp from "./components/HourTemp";
 import DailyTemp from "./components/DailyTemp";
 import Astro from "./components/Astro";
 
-import { WEATHER_DATA } from "./WeatherData";
+//import { WEATHER_DATA } from "./WeatherData";
 
 import "./App.scss";
 
@@ -59,7 +59,7 @@ function App() {
     });
 
     const tmrwHoursArr = tomorrowArr.filter((item) => {
-      while (count < 24 && Number(item.time.slice(-5,-3)) <= currentHour) {
+      while (count < 24 && Number(item.time.slice(-5, -3)) <= currentHour) {
         count++;
         return item;
       }
@@ -90,32 +90,34 @@ function App() {
 
   return (
     <div className="App">
-      {/* Search input */}
-      <section className="search-input">
-        <form>
-          <label>
-            <input
-              type="text"
-              placeholder="Enter a city..."
-              onChange={(e) => {
-                setSearchInput(e.target.value);
-              }}
-              value={searchInput}
-            />
-          </label>
-          {error && <p>City not found, try again!</p>}
-          <button onClick={handleSearch}>Search</button>
-        </form>
-      </section>
+      <div className="box1">
+        {/* Search input */}
+        <section className="search-input">
+          <form>
+            <label>
+              <input
+                type="text"
+                placeholder="Enter a city..."
+                onChange={(e) => {
+                  setSearchInput(e.target.value);
+                }}
+                value={searchInput}
+              />
+            </label>
+            {error && <p>City not found, try again!</p>}
+            <button onClick={handleSearch}>Search</button>
+          </form>
+        </section>
 
-      {/* Actual location temperature */}
-      {weatherData && (
-        <GeneralInfo
-          cityName={weatherData.location.name}
-          cityData={weatherData.current}
-          iconNum={weatherData.current.condition.icon.slice(-7)}
-        />
-      )}
+        {/* Actual location temperature */}
+        {weatherData && (
+          <GeneralInfo
+            cityName={weatherData.location.name}
+            cityData={weatherData.current}
+            iconNum={weatherData.current.condition.icon.slice(-7)}
+          />
+        )}
+      </div>
 
       {/* Hourly temperatures */}
       {weatherData && (
@@ -127,21 +129,20 @@ function App() {
           )}
         />
       )}
+      <div className="box2">
+        {/* Daily temperature */}
+        {weatherData && (
+          <DailyTemp
+            dailyData={weatherData.forecast.forecastday}
+            getDayName={getDayName}
+          />
+        )}
 
-      {/* Daily temperature */}
-      {weatherData && (
-        <DailyTemp
-          dailyData={weatherData.forecast.forecastday}
-          getDayName={getDayName}
-        />
-      )}
-
-      {/* Sunise / sunset */}
-      {weatherData && (
-        <Astro astroData={weatherData.forecast.forecastday[0].astro} />
-      )}
-
-      <p></p>
+        {/* Sunise / sunset */}
+        {weatherData && (
+          <Astro astroData={weatherData.forecast.forecastday[0].astro} />
+        )}
+      </div>
     </div>
   );
 }

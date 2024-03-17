@@ -1,11 +1,11 @@
 import "./Astro.scss";
 
-import sunrise from '../assets/sunrise.png'
-import sunset from '../assets/sunset.png'
+import sunrise from "../assets/sunrise.png";
+import sunset from "../assets/sunset.png";
 
-const Astro = ({astroData}) => {
+const Astro = ({ astroData }) => {
   return (
-    <div className="astroData">
+    <div className="astroData section-narrow">
       <div>
         <p>{astroData.sunrise}</p>
         <img src={sunrise} alt="sunrise" />
